@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Residential air duct, dryer vent and chimney cleaning in Calgary, Alberta.">
+<title>MapleGlow | Home Air Care Calgary</title>
+
+<style>
+:root {
+  --navy: #102c40;
+  --teal: #087f83;
+  --mint: #dff8f1;
+  --orange: #ff984f;
+  --cream: #fffaf3;
+  --white: #ffffff;
+  --text: #243b4b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--navy);
+  color: white;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  color: #54ddc3;
+}
+
+.logo span { color: white; }
+
+nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav a:hover { color: var(--orange); }
+
+.hero {
+  min-height: 530px;
+  padding: 90px 8%;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 85% 20%, #20b8a3 0, transparent 28%),
+    linear-gradient(125deg, #102c40, #087f83);
+  color: white;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.eyebrow {
+  color: #ffd09c;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 65px);
+  line-height: 1.1;
+  margin: 22px 0;
+}
+
+.hero h1 span { color: #65e4cc; }
+
+.hero p {
+  max-width: 620px;
+  font-size: 18px;
+  color: #e4f7f3;
+  margin-bottom: 28px;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 27px;
+  background: var(--orange);
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  margin: 5px;
+  transition: .3s;
+}
+
+.button:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.button-light {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.stats {
+  background: white;
+  padding: 30px 8%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 23px;
+  color: var(--teal);
+}
+
+.stat p {
+  color: #72818a;
+  font-size: 14px;
+}
+
+section {
+  padding: 80px 8%;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 42px;
+}
+
+.section-heading .eyebrow {
+  color: var(--teal);
+}
+
+.section-heading h2 {
+  color: var(--navy);
+  font-size: clamp(30px, 4vw, 42px);
+  margin: 10px 0;
+}
+
+.section-heading p { color: #71818c; }
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 32px 27px;
+  border-radius: 20px;
+  box-shadow: 0 10px 35px #102c4010;
+  border-top: 5px solid var(--teal);
+  transition: .3s;
+}
+
+.card:nth-child(2) { border-color: var(--orange); }
+.card:nth-child(3) { border-color: #7964c8; }
+
+.card:hover { transform: translateY(-8px); }
+
+.service-icon {
+  width: 75px;
+  height: 75px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  background: var(--mint);
+  margin-bottom: 20px;
+}
+
+.card:nth-child(2) .service-icon { background: #fff0df; }
+.card:nth-child(3) .service-icon { background: #eeeaff; }
+
+.card h3 {
+  color: var(--navy);
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.card p { color: #71818c; }
+
+.more {
+  display: inline-block;
+  color: var(--teal);
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 18px;
+}
+
+.about {
+  background: var(--mint);
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about h2 {
+  color: var(--navy);
+  font-size: 39px;
+  line-height: 1.2;
+  margin: 12px 0 20px;
+}
+
+.about p { color: #536a72; }
+
+.experience {
+  background: linear-gradient(140deg, #087f83, #102c40);
+  color: white;
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.experience strong {
+  display: block;
+  font-size: 65px;
+  color: #ffb16f;
+  line-height: 1.2;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature {
+  background: white;
+  padding: 27px 20px;
+  border-radius: 17px;
+  text-align: center;
+  box-shadow: 0 7px 25px #102c400c;
+}
+
+.feature .symbol { font-size: 35px; }
+
+.feature h3 {
+  color: var(--teal);
+  margin: 12px 0;
+}
+
+.contact {
+  background: linear-gradient(120deg, #087f83, #102c40);
+  text-align: center;
+  color: white;
+}
+
+.contact h2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.contact p {
+  max-width: 600px;
+  margin: 10px auto;
+  color: #e3f4f1;
+}
+
+footer {
+  background: #0b2030;
+  color: #d5e4e9;
+  text-align: center;
+  padding: 35px 8%;
+}
+
+footer .logo { margin-bottom: 12px; }
+
+footer small {
+  display: block;
+  margin-top: 18px;
+  color: #9fb2ba;
+}
+
+@media(max-width: 800px) {
+  .services, .features { grid-template-columns: 1fr; }
+  .about { grid-template-columns: 1fr; }
+  .hero { padding: 65px 7%; }
+  .stats { grid-template-columns: 1fr; }
+  nav { gap: 14px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🍁 MapleGlow<span> Home Air Care</span></div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">CALGARY, ALBERTA • CANADA</div>
+
+    <h1>A Fresh Home Starts With <span>Cleaner Air.</span></h1>
+
+    <p>
+      Residential air duct, dryer vent and chimney
+      cleaning solutions. Helping homeowners create
+      cleaner and more comfortable living spaces.
+    </p>
+
+    <a class="button" href="#services">Explore Our Services →</a>
+    <a class="button button-light" href="#contact">Contact Us</a>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat">
+    <strong>Since 2009</strong>
+    <p>Business story</p>
+  </div>
+
+  <div class="stat">
+    <strong>3 Services</strong>
+    <p>Home cleaning solutions</p>
+  </div>
+
+  <div class="stat">
+    <strong>Residential</strong>
+    <p>Home-focused service</p>
+  </div>
+</div>
+
+<section id="services">
+  <div class="section-heading">
+    <div class="eyebrow">WHAT WE DO</div>
+    <h2>Our Home Cleaning Services</h2>
+    <p>
+      Thoughtful cleaning solutions for the important
+      spaces and systems inside your home.
+    </p>
+  </div>
+
+  <div class="services">
+
+    <article class="card">
+      <div class="service-icon">🌬️</div>
+      <h3>Air Duct Cleaning</h3>
+      <p>
+        Cleaning residential HVAC ductwork to remove
+        accumulated dust and debris and support
+        cleaner home airflow.
+      </p>
+      <a class="more" href="#contact">Learn More →</a>
+    </article>
+
+    <article class="card">
+      <div class="service-icon">🌀</div>
+      <h3>Dryer Vent Cleaning</h3>
+      <p>
+        Removing lint buildup from dryer vent systems
+        to help maintain proper airflow and safer
+        dryer operation.
+      </p>
+      <a class="more" href="#contact">Learn More →</a>
+    </article>
+
+    <article class="card">
+      <div class="service-icon">🔥</div>
+      <h3>Chimney Cleaning</h3>
+      <p>
+        Residential chimney cleaning to remove soot
+        and creosote buildup and help maintain
+        fireplace systems.
+      </p>
+      <a class="more" href="#contact">Learn More →</a>
+    </article>
+
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div>
+    <div class="eyebrow">ABOUT MAPLEGLOW</div>
+
+    <h2>Care for Your Home. Comfort for Your Family.</h2>
+
+    <p>
+      MapleGlow Home Air Care is a fictional Canadian
+      residential home-service brand concept inspired
+      by the Calgary community.
+    </p>
+
+    <br>
+
+    <p>
+      Our brand story begins in 2009, with a focus on
+      air duct cleaning, dryer vent maintenance and
+      chimney cleaning for residential properties.
+    </p>
+
+    <br>
+
+    <a href="#contact" class="button">Get in Touch →</a>
+  </div>
+
+  <div class="experience">
+    <strong>2009</strong>
+    <h3>Our Brand Story Begins</h3>
+    <p>Home care with a fresh perspective.</p>
+    <div style="font-size:55px;margin-top:20px">🍁 🏡</div>
+  </div>
+</section>
+
+<section>
+  <div class="section-heading">
+    <div class="eyebrow">THE MAPLEGLOW APPROACH</div>
+    <h2>Why Choose Our Services?</h2>
+    <p>A home-focused approach with attention to detail.</p>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <div class="symbol">🏡</div>
+      <h3>Residential Focus</h3>
+      <p>Services designed around home cleaning needs.</p>
+    </div>
+
+    <div class="feature">
+      <div class="symbol">✨</div>
+      <h3>Attention to Detail</h3>
+      <p>A careful and organized cleaning approach.</p>
+    </div>
+
+    <div class="feature">
+      <div class="symbol">🤝</div>
+      <h3>Friendly Approach</h3>
+      <p>Clear communication and customer care.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="eyebrow">LET'S CONNECT</div>
+  <h2>Ready for a Fresher Home?</h2>
+
+  <p>
+    Have a question about residential air duct,
+    dryer vent or chimney cleaning?
+    Get in touch with MapleGlow.
+  </p>
+
+  <p>📍 Calgary, Alberta, Canada</p>
+
+  <a href="mailto:hello@example.com" class="button">
+    ✉ Email Us
+  </a>
+</section>
+
+</main>
+
+<footer>
+  <div class="logo">🍁 MapleGlow Home Air Care</div>
+  <p>Cleaner Air. Safer Homes. A Fresher Feeling.</p>
+  <p>Residential Services • Calgary, Alberta, Canada</p>
+
+  <small>
+    Fictional demonstration website. Business history,
+    service details and contact information must be
+    verified or replaced before commercial use.
+  </small>
+
+  <small>© 2026 MapleGlow Home Air Care Demo</small>
+</footer>
+
+</body>
+</html>
